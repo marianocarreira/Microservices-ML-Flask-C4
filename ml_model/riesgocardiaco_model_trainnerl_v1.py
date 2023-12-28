@@ -1,13 +1,13 @@
 import numpy as np
 import pandas as pd
 import tensorflow.keras
+import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 from tensorflow import keras
 from keras.models import Sequential
 from keras.layers import Dense
 from tensorflow.keras.optimizers import Adam
-import matplotlib.pyplot as plt
 
 #---------------------------------------------------Step 1 - Obtención y visualización del dataset
 
