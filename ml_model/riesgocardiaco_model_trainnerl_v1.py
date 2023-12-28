@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import tensorflow.keras
 import matplotlib.pyplot as plt
+
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 from tensorflow import keras
@@ -58,7 +59,7 @@ ax.set_xlabel("Edad")
 f.tight_layout() 
 plt.show()
 
-#---------------------------------------------------Step 2 - Pre procesar datos
+#---------------------------------------------------Step 2 - Pre-procesar datos
 
 #separo los datos de las etiquetas y de los resultados
 X = data.drop(['riesgo_cardiaco'], axis='columns')
@@ -86,7 +87,7 @@ scaled_X_test = pd.DataFrame(scaled_X_test, columns=X_test.columns)
 model = Sequential()
 
 #tiene 6 datos de entrada por el sueldo basico, antiguedad, hijos, a b c
-model.add(Dense(50, input_shape=(6,), activation='relu', kernel_initializer='uniform'))
+model.add(Dense(6, input_shape=(6,), activation='relu', kernel_initializer='uniform'))
 model.add(Dense(50, activation='relu'))
 model.add(Dense(100, activation='relu'))
 model.add(Dense(150, activation='relu'))
@@ -110,3 +111,6 @@ y_pred = model.predict(scaled_X_test)
 for i in range(10):
   print("El riesgo verdadero es ", y_test[i])
   print("El riesgo estimado es " , y_pred[i])
+
+
+  model.save("../src/predictor-ms/ml_model/riesgo_cardiaco_model_v1")
