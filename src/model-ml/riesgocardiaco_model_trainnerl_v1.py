@@ -113,4 +113,4 @@ for i in range(10):
   print("El riesgo estimado es " , y_pred[i])
 
 
-  model.save("../predictor-ms/ml_model/riesgo_cardiaco_model_v1")
+  model.save("../predictor-ms/business/riesgo_cardiaco_model_v1")
