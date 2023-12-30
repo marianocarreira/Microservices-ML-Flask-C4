@@ -1,5 +1,4 @@
 from flask import request
-from __main__ import app
 from .  import logging_internal_api_blueprint
 from domain import logger_service as svc
 
