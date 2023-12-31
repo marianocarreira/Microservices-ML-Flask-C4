@@ -9,12 +9,24 @@ services:
       POSTGRES_PASSWORD: root  
     ports:  
       - "5432:5432"  
+  
   pgadmin:  
     container_name: pgadmin4_container  
     image: dpage/pgadmin4  
     restart: always  
     environment:  
-      PGADMIN_DEFAULT_EMAIL: admin@gmail.com  
+      PGADMIN_DEFAULT_EMAIL: root@root.com  
       PGADMIN_DEFAULT_PASSWORD: root  
     ports:  
       - "5050:80"
+  
+  rabbitmqServer:
+    container_name: rabbitmqServer
+    image: "rabbitmq:3.6-management-alpine"
+    hostname: "rabbitmq-host"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: "root"
+      RABBITMQ_DEFAULT_PASS: "root"

@@ -9,3 +9,11 @@ class LogEntry(db.Model):
 
     def __repr__(self):
         return f'<User {self.username}>'
+    
+    def to_json(self):
+        return {
+            'id': self.id,
+            'datetime': self.datetime,
+            'datatType': self.dataType,
+            'data': self.data
+        }
