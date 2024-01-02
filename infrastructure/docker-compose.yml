@@ -30,3 +30,9 @@ services:
     environment:
       RABBITMQ_DEFAULT_USER: "root"
       RABBITMQ_DEFAULT_PASS: "root"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge

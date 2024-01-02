@@ -12,7 +12,7 @@ def getLogs():
 
 def postLog():
     logEntry = LogEntry()
-    logEntry.data = "{ \"data\": \"test\"  }"
+    logEntry.data = "{ \"data\": \"test\" }"
     logEntry.datetime = datetime.now()
     logEntry.dataType = 1
     db.session.add(logEntry)
