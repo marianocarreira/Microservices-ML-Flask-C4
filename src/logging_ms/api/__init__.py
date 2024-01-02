@@ -1,13 +1,11 @@
 from flask import Blueprint
-
-logging_internal_api_blueprint = Blueprint('logging_internal_api', __name__)
-
-from . import controller
-
 from flask import Flask
 from flask_migrate import Migrate
 from infrastructure import db
 from infrastructure.log_model import LogEntry
+
+logging_internal_api_blueprint = Blueprint('logging_internal_api', __name__)
+from . import controller
 
 def createApp():
     app = Flask(__name__)
