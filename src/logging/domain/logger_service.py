@@ -2,6 +2,7 @@ from infrastructure import db
 from infrastructure.log_model import LogEntry
 from datetime import datetime
 from flask import jsonify
+import json
 
 def getLogs():
     data = []
@@ -10,11 +11,11 @@ def getLogs():
     response = jsonify(data)
     return response
 
-def postLog():
-    logEntry = LogEntry()
-    logEntry.data = "{ \"data\": \"test\" }"
-    logEntry.datetime = datetime.now()
-    logEntry.dataType = 1
+def postLog(json):
+    logEntry = LogEntry() 
+    logEntry.data = json['data']
+    logEntry.datetime = json['datetime']
+    logEntry.dataType = json['dataType']
     db.session.add(logEntry)
     db.session.commit()
     return jsonify({'message': 'User added', 'result': logEntry.to_json()})

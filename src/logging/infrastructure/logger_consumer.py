@@ -1,10 +1,12 @@
 import pika
 from domain import logger_service
-import sys, os
+import sys, os, json
 
 def callback(ch, method, properties, body):
-    print(f" [x] Received {body}")
-    logger_service.postLog()
+    request = body.decode()
+    print(f"Request received: {request}")
+    newJson = json.loads(request)
+    logger_service.postLog(newJson)
 
 def start_consuming(queueName, app):
     with app.app_context():

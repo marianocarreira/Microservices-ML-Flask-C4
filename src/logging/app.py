@@ -1,6 +1,6 @@
 from application import createApp 
 from infrastructure.logger_consumer import start_consuming
-import threading    
+import threading    , json
 
 app = createApp()
 
