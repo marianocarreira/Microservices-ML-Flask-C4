@@ -1,5 +1,0 @@
-setup.py
-predictor_common.egg-info/PKG-INFO
-predictor_common.egg-info/SOURCES.txt
-predictor_common.egg-info/dependency_links.txt
-predictor_common.egg-info/top_level.txt

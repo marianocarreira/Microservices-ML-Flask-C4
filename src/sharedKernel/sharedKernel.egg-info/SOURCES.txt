@@ -1,0 +1,5 @@
+setup.py
+sharedKernel.egg-info/PKG-INFO
+sharedKernel.egg-info/SOURCES.txt
+sharedKernel.egg-info/dependency_links.txt
+sharedKernel.egg-info/top_level.txt

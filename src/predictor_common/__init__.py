@@ -1,1 +1,0 @@
-from predictor_common.sharedkernel import LogEntry,theMethod

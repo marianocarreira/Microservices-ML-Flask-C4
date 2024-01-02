@@ -3,6 +3,7 @@ from . import predictor_internal_api_blueprint, theCache
 from domain import predictor_service as svc
 
 def make_predictor_key():
+   print("Response returned from cache")
    key = ";".join([f"{key}:{request.args[key]}" for key in request.args])
    return key
 

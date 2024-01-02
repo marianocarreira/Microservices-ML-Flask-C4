@@ -12,13 +12,14 @@ from flask import Flask
 class TimingMiddleware:
     def __init__(self, flaskApp):
         self.app = flaskApp.wsgi_app
+        self.flaskApp = flaskApp
       
     def __call__(self, environ, start_response):
         start_time = time.time()
         response = self.app(environ, start_response)
         end_time = time.time()
         elapsed_time = end_time - start_time
-        queue_logMessage(elapsed_time)
+        queue_logMessage(elapsed_time,self.flaskApp)
         return response
 
 def createApp():
