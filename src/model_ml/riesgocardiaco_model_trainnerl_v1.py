@@ -70,13 +70,13 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 #print(X_train)
 
 #Escalar los datos
-scaler = MinMaxScaler()
+# scaler = MinMaxScaler()
 
-scaled_X_train = scaler.fit_transform(X_train)
-scaled_X_train = pd.DataFrame(scaled_X_train, columns=X_train.columns)
+#scaled_X_train = scaler.fit_transform(X_train)
+#scaled_X_train = pd.DataFrame(scaled_X_train, columns=X_train.columns)
 
-scaled_X_test = scaler.fit_transform(X_test)
-scaled_X_test = pd.DataFrame(scaled_X_test, columns=X_test.columns)
+#scaled_X_test = scaler.fit_transform(X_test)
+#scaled_X_test = pd.DataFrame(scaled_X_test, columns=X_test.columns)
 
 #print(scaled_X_train)
 #print(scaled_X_test)
@@ -87,8 +87,7 @@ scaled_X_test = pd.DataFrame(scaled_X_test, columns=X_test.columns)
 model = Sequential()
 
 #tiene 6 datos de entrada por el sueldo basico, antiguedad, hijos, a b c
-model.add(Dense(6, input_shape=(6,), activation='relu', kernel_initializer='uniform'))
-model.add(Dense(50, activation='relu'))
+model.add(Dense(50, input_shape=(6,), activation='relu', kernel_initializer='uniform'))
 model.add(Dense(100, activation='relu'))
 model.add(Dense(150, activation='relu'))
 model.add(Dense(1, activation='sigmoid'))
@@ -100,17 +99,16 @@ model.summary()
 
 #---------------------------------------------------Step 4 - Entrenar la red
 
-model.fit(scaled_X_train, y_train, verbose=2, batch_size = 10000, epochs=250)
+model.fit(X_train, y_train, verbose=2, batch_size = 10000, epochs=250)
 
 #---------------------------------------------------Step 5 - Evaluar la red
-resultado = model.evaluate(scaled_X_test, y_test)
+resultado = model.evaluate(X_test, y_test)
 
 #predicciones con los datos con los que no fue entrenado
-y_pred = model.predict(scaled_X_test)
+y_pred = model.predict(X_test)
 
 for i in range(10):
   print("El riesgo verdadero es ", y_test[i])
   print("El riesgo estimado es " , y_pred[i])
 
-
-  model.save("../predictor-ms/business/riesgo_cardiaco_model_v1")
+  model.save("../predictions_ms/infrastructure/riesgo_cardiaco_model_v1")
