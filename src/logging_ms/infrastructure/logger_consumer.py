@@ -3,17 +3,20 @@ from domain import logger_service
 import sys, os, json
 
 def callback(ch, method, properties, body):
-    request = body.decode()
-    print(f"Request received: {request}")
-    newJson = json.loads(request)
-    logger_service.postLog(newJson)
+    try:
+        request = body.decode()
+        print(f"Request received: {request}")
+        newJson = json.loads(request)
+        logger_service.postLog(newJson)
+    except:
+        print("Error consuming message from queue")
 
 def start_consuming(queueName, app):
     with app.app_context():
         try:
             rabbitmq_params = pika.ConnectionParameters(
-            host='localhost',  # Replace with the actual RabbitMQ server hostname or IP address
-            port=5672,          # Default RabbitMQ port
+            host='localhost', 
+            port=5672,       
             virtual_host='/',
             credentials=pika.PlainCredentials(username='root', password='root')
             )
