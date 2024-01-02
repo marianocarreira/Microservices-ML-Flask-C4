@@ -22,4 +22,4 @@ def riesgo_cardiaco_get():
     if error:
         return abort(400, description=error)
     
-    return jsonify({"riesgo_cardiaco":svc.calcularRiesgo(params)}) 
+    return jsonify({"riesgoCardiaco":svc.calcularRiesgo(params)}) 
