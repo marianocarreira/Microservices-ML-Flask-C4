@@ -1,11 +1,6 @@
 from flask import request, jsonify, abort
-from . import predictor_internal_api_blueprint, theCache
+from . import predictor_internal_api_blueprint, theCache, make_predictor_key
 from domain import predictor_service as svc
-
-def make_predictor_key():
-   print("Response returned from cache")
-   key = ";".join([f"{key}:{request.args[key]}" for key in request.args])
-   return key
 
 @predictor_internal_api_blueprint.route('/internal/api/riesgoCardiaco', methods=['GET'])
 @theCache.cached(timeout=60, make_cache_key=make_predictor_key)

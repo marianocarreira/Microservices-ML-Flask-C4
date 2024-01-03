@@ -1,0 +1,2 @@
+def authUser(apiKey):
+    return ""

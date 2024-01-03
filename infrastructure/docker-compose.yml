@@ -32,7 +32,7 @@ services:
       RABBITMQ_DEFAULT_PASS: "root"
     networks:
       - mynetwork
-
+  
 networks:
   mynetwork:
     driver: bridge

@@ -7,9 +7,6 @@ class LogEntry(db.Model):
     dataType = db.Column(db.Integer, nullable=False)
     data = db.Column(db.Text, nullable=False)
 
-    def __repr__(self):
-        return f'<User {self.username}>'
-    
     def to_json(self):
         return {
             'id': self.id,
