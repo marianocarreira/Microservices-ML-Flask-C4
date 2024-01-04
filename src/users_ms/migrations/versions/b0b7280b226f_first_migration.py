@@ -1,8 +1,8 @@
-"""first_migration
+"""first migration
 
-Revision ID: 096e67695460
+Revision ID: b0b7280b226f
 Revises: 
-Create Date: 2024-01-03 21:11:29.244087
+Create Date: 2024-01-04 18:06:07.022334
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '096e67695460'
+revision = 'b0b7280b226f'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -21,9 +21,9 @@ def upgrade():
     op.create_table('user',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('apiKey', sa.Text(), nullable=False),
-    sa.Column('suscription_name', sa.Text(), nullable=False),
-    sa.Column('suscription_rpm', sa.Integer(), nullable=False),
-    sa.CheckConstraint("suscription_name IN ('FREEMIUM', 'PREMIUM')", name='check_valid_subscription'),
+    sa.Column('suscriptionName', sa.Text(), nullable=False),
+    sa.Column('suscriptionRpm', sa.Integer(), nullable=False),
+    sa.CheckConstraint('"suscriptionName" IN (\'FREEMIUM\', \'PREMIUM\')', name='check_valid_subscription'),
     sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###

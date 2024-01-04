@@ -13,13 +13,13 @@ class AuthResponse:
 
 def authUser(api_Key):
     user_returned = User.query.filter_by(apiKey=api_Key).first()
+    if not user_returned:
+        return None
+    
     user = User()
     user.apiKey = user_returned.apiKey
     user.id = user_returned.id
-    user.suscription_name = user.suscription_name
-    user.suscription_rpm = user.suscription_rpm
-    status = 'No Autorizado'
-    if user_returned:
-        status='Ok'
-    return AuthResponse(user.to_json(),status)
+    user.suscriptionName = user_returned.suscriptionName
+    user.suscriptionRpm = user_returned.suscriptionRpm
+    return user
     

@@ -1,5 +1,6 @@
 from infrastructure.users_model import User
 from api import createApp 
+from domain.users_service import User 
 
 app = createApp()
 
