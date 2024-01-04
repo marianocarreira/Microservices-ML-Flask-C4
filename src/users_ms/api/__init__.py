@@ -2,16 +2,15 @@ from flask import Blueprint
 from flask import Flask
 from flask_migrate import Migrate
 from infrastructure import db
-from users_ms.infrastructure.users_model import User
+from infrastructure.users_model import User
 
-users_internal_api_blueprint = Blueprint('subscription_internal_api', __name__)
-from . import controller
+users_internal_api_blueprint = Blueprint('users_internal_api_blueprint', __name__)
 
 def createApp():
     app = Flask(__name__)
 
     # configure application
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://root:root@127.0.0.1:5432/suscriptions-db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://root:root@127.0.0.1:5432/users-db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     # Database
@@ -21,10 +20,8 @@ def createApp():
 
     # Register blueprints
     from api import users_internal_api_blueprint
-
+   # import declared routes
+    from . import controllers
     app.register_blueprint(users_internal_api_blueprint)
-
-    # import declared routes
-    from . import controller
-
+    
     return app

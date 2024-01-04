@@ -1,24 +1,24 @@
-from datetime import datetime
-from sqlalchemy import create_engine, Column, Integer, String, CheckConstraint
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import Session
+from sqlalchemy import CheckConstraint
 from . import db
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    nombre = db.Column(db.Text, nullable=False)
-    suscriptionType = db.Column(db.Text, nullable=False, )
+    apiKey = db.Column(db.Text, nullable=False)
+    suscription_name = db.Column(db.Text, nullable=False, default='FREEMIUM')
+    suscription_rpm = db.Column(db.Integer, nullable=False)
     
     def to_json(self):
         return {
             'id': self.id,
-            'nombre': self.nombre,
-            'subscriptionType': self.codigo
+            'apiKey': self.apiKey,
+            'suscription_name': self.suscription_name,
+            'suscription_rpm': self.suscription_rpm
         }
     
     __table_args__ = (
         CheckConstraint(
-            suscriptionType.in_(['FREEMIUM', 'PREMIUM', 'NONE']),
+            suscription_name.in_(['FREEMIUM', 'PREMIUM']),
             name='check_valid_subscription'
-        )
+        ) ,
     )
+    
