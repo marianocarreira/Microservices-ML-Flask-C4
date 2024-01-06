@@ -111,4 +111,4 @@ for i in range(10):
   print("El riesgo verdadero es ", y_test[i])
   print("El riesgo estimado es " , y_pred[i])
 
-  model.save("../predictions_ms/infrastructure/riesgo_cardiaco_model_v1")
+  #model.save("../predictions_ms/infrastructure/riesgo_cardiaco_model_v1")
