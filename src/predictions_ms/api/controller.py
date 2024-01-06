@@ -6,15 +6,8 @@ from domain import predictor_service as svc
 @theCache.cached(timeout=60, make_cache_key=make_predictor_key)
 def riesgo_cardiaco_get():
     params = svc.ModelParams()
-    params.colesterol = request.args.get('colesterol')
-    params.presion = request.args.get('presion')
-    params.glucosa = request.args.get('glucosa')
-    params.edad = request.args.get('edad')
-    params.sobrepeso = request.args.get('sobrepeso')
-    params.tabaquismo = request.args.get('tabaquismo')
-    error = params.validar()
-    
+    error = params.fromRequest(request)
     if error:
-        return abort(400, description=error)
+        return jsonify(error),400
     
     return jsonify({"riesgoCardiaco":svc.calcularRiesgo(params)}) 

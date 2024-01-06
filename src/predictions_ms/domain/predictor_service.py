@@ -15,22 +15,49 @@ class ModelParams():
     sobrepeso = ''
     tabaquismo = ''
 
-    def validar(self):
-        error = ""
-        if not self.colesterol:
+    def fromRequest(self, request):
+        error = ''
+       
+        colesterol = request.args.get('colesterol')
+        if not colesterol:
             error += " Colesterol no especificado;"
-        if not self.presion:
+        else:
+            self.colesterol = colesterol
+
+        presion = request.args.get('presion')
+        if not presion:
             error += " Presion no especificada;"
-        if not self.glucosa:
+        else:
+            self.presion=presion
+
+        glucosa = request.args.get('glucosa')
+        if not glucosa:
              error += " Glucosa no especificada;"
-        if not self.edad:
-             error += " Edad no especificada;"
-        if not self.sobrepeso:
-             error += " Sobrepeso no especificado;"
-        if not self.tabaquismo:
-             error += " Tabaquismo no especificado;"
+        else:
+            self.glucosa = glucosa
         
-        return error
+        edad = request.args.get('edad')
+        if not edad:
+             error += " Edad no especificada;"
+        else:
+            self.edad = edad
+
+        sobrepeso = request.args.get('sobrepeso')
+        if not sobrepeso:
+             error += " Sobrepeso no especificado;"
+        else:
+            self.sobrepeso = sobrepeso
+        
+        tabaquismo = request.args.get('tabaquismo')
+        if not tabaquismo:
+             error += " Tabaquismo no especificado;"
+        else:
+             self.tabaquismo = tabaquismo
+        
+        if  error != '':
+            return { 'error': error }
+        else:
+            return None
     
     def getNumpy(self):
         return np.array([[float(self.colesterol),
