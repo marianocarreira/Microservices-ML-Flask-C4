@@ -1,0 +1,9 @@
+{
+    "DEBUG": true,
+    "SQLALCHEMY_DATABASE_URI": "postgresql://root:root@db:5432/logging-db",
+    "SQLALCHEMY_TRACK_MODIFICATIONS": false,
+    "API_BASE_URL": "/internal/api",
+    "API_KEY_HEADER": "api-Key",
+    "APP_PORT": 8020,
+    "APP_HOST": "0.0.0.0"
+}

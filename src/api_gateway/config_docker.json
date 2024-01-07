@@ -1,0 +1,12 @@
+{
+    "EXTERNAL_API_BASE_URL": "/external/api",
+    "INTERNAL_RIESGO_CARDIACO_ENDPOINT": "http://t2_tp_predictions_ms:8010/internal/api/riesgoCardiaco", 
+    "INTERNAL_AUTH_ENDPOINT": "http://users_ms:8020/internal/api/user/auth",
+    "APP_PORT": 8080,
+    "APP_HOST": "0.0.0.0",
+    "CACHE_TYPE": "SimpleCache",
+    "HEADER_API_KEY": "api-Key",
+    "RATE_LIMITING_TIME_OUT_SECONDS": 60,
+    "QUEUE_CONNECTION_STRING": "amqps://root:root@rabbitmqServer/queue-log",
+    "QUEUE_LOG_NAME": "queue-log"
+}

@@ -1,40 +1,81 @@
 version: '3.8'  
-services:  
+services:
+  db:  
+    container_name: pg_container  
+    image: postgres  
+    restart: always  
+    environment:  
+      POSTGRES_USER: root  
+      POSTGRES_PASSWORD: root  
+    ports:  
+      - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  
+
+  pgadmin:  
+    container_name: pgadmin4_container  
+    image: dpage/pgadmin4  
+    restart: always  
+    environment:  
+      PGADMIN_DEFAULT_EMAIL: admin@gmail.com  
+      PGADMIN_DEFAULT_PASSWORD: root  
+    ports:  
+      - "5050:80"
+
+  rabbitmqServer:
+    container_name: rabbitmqServer
+    image: "rabbitmq:3.6-management-alpine"
+    hostname: "rabbitmq-host"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: "root"
+      RABBITMQ_DEFAULT_PASS: "root"
+    networks:
+      - mynetwork
+
   logging_ms:
     container_name: t2_tp_logging_ms
     image: t2_tp_logging_ms
     ports:
-      - "127.0.0.1:8000:8000"
+      - "8000:8000"
     networks:
       - mynetwork
     restart: always
-  
+    environment:
+      FLASK_ENV: "docker"
+
   users_ms:
     container_name: t2_tp_users_ms
     image: t2_tp_users_ms
     ports:
-      - "127.0.0.1:8020:8020"
+      - "8020:8020"
     networks:
       - mynetwork
     restart: always
-  
+    environment:
+      FLASK_ENV: "docker"
+
   t2_tp_predictions_ms:
     container_name: t2_tp_predictions_ms
     image: t2_tp_predictions_ms
     ports:
-      - "127.0.0.1:8010:8010"
+      - "8010:8010"
     networks:
       - mynetwork
     restart: always
-  
+
   t2_tp_gateway_ms:
     container_name: t2_tp_gategay_ms
     image: t2_tp_gategay_ms
     ports:
-      - "127.0.0.1:8080:8080"
+      - "8080:8080"
     networks:
       - mynetwork
     restart: always
+    environment:
+      FLASK_ENV: "docker"
   
 networks:
   mynetwork:
