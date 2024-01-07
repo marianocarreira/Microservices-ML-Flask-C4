@@ -1,6 +1,6 @@
-FROM python:3.9
+FROM python:3.11.2-alpine3.17
 
-WORKDIR /predictions_ms
+WORKDIR /api_gateway
 
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
@@ -9,4 +9,4 @@ COPY . .
 
 CMD [ "python", "app.py"]
 
-EXPOSE 8010
+EXPOSE 8080

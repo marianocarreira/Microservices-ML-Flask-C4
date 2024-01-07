@@ -1,6 +1,6 @@
 FROM python:3.11.2-alpine3.17
 
-WORKDIR /subscriptions_ms
+WORKDIR /users_ms
 
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt

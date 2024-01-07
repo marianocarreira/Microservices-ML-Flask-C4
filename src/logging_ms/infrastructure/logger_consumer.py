@@ -1,4 +1,4 @@
-import pika
+import pika, time
 from domain import logger_service
 import sys, os, json
 
@@ -20,7 +20,16 @@ def start_consuming(queueName, app):
             virtual_host='/',
             credentials=pika.PlainCredentials(username='root', password='root')
             )
-            connection = pika.BlockingConnection(rabbitmq_params)
+            connection = None
+            #while connection is None or not connection.is_open:
+            #    try:
+            otherparam = pika.URLParameters("amqps://juvsiwic:BsycWVEIccDJ-7cW1_ysrA_1vXp57YQ4@prawn.rmq.cloudamqp.com/juvsiwic")
+            connection = pika.BlockingConnection(otherparam)
+            #        print("Connected to RabbitMQ!")
+            #    except pika.exceptions.AMQPConnectionError:
+            #        print("Failed to connect. Retrying in 15 second...")
+            #        time.sleep(15)
+
             channel = connection.channel()
             channel.queue_declare(queue=queueName)  
             channel.basic_consume(queue=queueName, on_message_callback=callback, auto_ack=True)

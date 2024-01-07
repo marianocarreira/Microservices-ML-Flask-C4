@@ -1,4 +1,4 @@
-import pika, json
+import pika, json, time
 from datetime import datetime
 from flask import request
 
@@ -9,7 +9,12 @@ def queue_logMessage(time,endpoint,statusStr,statusCode, apiKey):
                     port=5672,         
                     virtual_host='/',
                     credentials=pika.PlainCredentials(username='root', password='root'))
-        connection=pika.BlockingConnection(params)
+        
+      
+        otherparam = pika.URLParameters("amqps://juvsiwic:BsycWVEIccDJ-7cW1_ysrA_1vXp57YQ4@prawn.rmq.cloudamqp.com/juvsiwic")
+        connection=pika.BlockingConnection(otherparam)
+        print("Connected to RabbitMQ!")
+        
         channel = connection.channel()
         channel.queue_declare(queue='queue-log')
         if statusStr=='error':
@@ -24,5 +29,5 @@ def queue_logMessage(time,endpoint,statusStr,statusCode, apiKey):
         channel.basic_publish(exchange='', routing_key='queue-log' ,body=str(entry))
         print(f"Published message: {entry}")
         connection.close()
-    except:
-        print("Error sending message to the queue.")
+    except Exception as e:
+        print(f"Error sending message to the queue. {e}")

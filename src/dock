@@ -1,0 +1,6 @@
+docker build -t t2_tp_logging_ms .
+docker run -p 4000:80 your_image_name
+
+docker run -p 4000:80 -d your_image_name -- Backround
+
+docker stop <container_id>

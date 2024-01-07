@@ -10,7 +10,8 @@ def createApp():
     app = Flask(__name__)
 
     # configure application
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://root:root@127.0.0.1:5432/users-db'
+    #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://root:root@127.0.0.1:5432/users-db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://sql10675102:Xv7sb2wbBx@sql10.freesqldatabase.com/sql10675102'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     # Database
