@@ -1,0 +1,8 @@
+{
+    "API_BASE_URL": "/internal/api",
+    "CACHE_TYPE": "SimpleCache",
+    "ML_MODEL_PATH": "./infrastructure/riesgo_cardiaco_model_v1",
+    "ML_MODEL_PATH_LIGHT": "./infrastructure/model.tflite",
+    "APP_PORT": 8010,
+    "APP_HOST": "0.0.0.0"
+}

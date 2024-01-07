@@ -1,0 +1,11 @@
+{
+    "SQLALCHEMY_DATABASE_URI": "postgresql://agefnoif:LIR1-NUVI-DKTOvKq-eH0li0wpAREWw2@babar.db.elephantsql.com/agefnoif",
+    "SQLALCHEMY_TRACK_MODIFICATIONS": false,
+    "API_BASE_URL": "/internal/api",
+    "API_KEY_HEADER": "api-Key",
+    "QUEUE_CONNECTION_STRING": "amqps://juvsiwic:BsycWVEIccDJ-7cW1_ysrA_1vXp57YQ4@prawn.rmq.cloudamqp.com/juvsiwic",
+    "QUEUE_CONNECTION_TIMEOUT": 5,
+    "LOG_QUEQUE_NAME": "queue-log",
+    "APP_PORT": 8000,
+    "APP_HOST": "0.0.0.0"
+}

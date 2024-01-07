@@ -1,8 +1,9 @@
 from flask import Blueprint, request, Flask
 from flask_caching import Cache
+from infrastructure.config import config_data
 
 predictor_internal_api_blueprint = Blueprint('predictor_internal_api', __name__)
-theCache = Cache(config={'CACHE_TYPE': 'SimpleCache'})   
+theCache = Cache(config={'CACHE_TYPE': f"{config_data['CACHE_TYPE']}"})   
 
 def make_predictor_key():
    print("Response returned from cache")

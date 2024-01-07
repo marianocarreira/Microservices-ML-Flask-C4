@@ -1,0 +1,9 @@
+{
+    "DEBUG": true,
+    "SQLALCHEMY_DATABASE_URI": "mysql+pymysql://sql10675102:Xv7sb2wbBx@sql10.freesqldatabase.com/sql10675102",
+    "SQLALCHEMY_TRACK_MODIFICATIONS": false,
+    "API_BASE_URL": "/internal/api",
+    "API_KEY_HEADER": "api-Key",
+    "APP_PORT": 8020,
+    "APP_HOST": "0.0.0.0"
+}

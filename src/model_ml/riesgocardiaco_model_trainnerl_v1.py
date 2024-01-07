@@ -9,12 +9,12 @@ from tensorflow import keras
 from keras.models import Sequential
 from keras.layers import Dense
 from tensorflow.keras.optimizers import Adam
+from . import MODEL_RELEASE_OUTPUT_PATH, DATASET_FILE_PATH
 
 #---------------------------------------------------Step 1 - Obtención y visualización del dataset
 
 #--read the file
-nombre_archivo = './dataset/datos_de_pacientes_5000.csv'
-data = pd.read_csv(nombre_archivo, index_col=0)
+data = pd.read_csv(DATASET_FILE_PATH, index_col=0)
 #print(data)
 
 #Chequeo y remuevo NaNs
@@ -72,6 +72,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 #Escalar los datos
 # scaler = MinMaxScaler()
 
+#COMENTADO DADO QUE OBTENGO MEJORES RESULTADOS SIN EL ESCALADO
+
 #scaled_X_train = scaler.fit_transform(X_train)
 #scaled_X_train = pd.DataFrame(scaled_X_train, columns=X_train.columns)
 
@@ -111,4 +113,4 @@ for i in range(10):
   print("El riesgo verdadero es ", y_test[i])
   print("El riesgo estimado es " , y_pred[i])
 
-  #model.save("../predictions_ms/infrastructure/riesgo_cardiaco_model_v1")
+model.save(MODEL_RELEASE_OUTPUT_PATH)

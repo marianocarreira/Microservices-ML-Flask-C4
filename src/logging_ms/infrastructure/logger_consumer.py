@@ -1,6 +1,7 @@
 import pika, time
 from domain import logger_service
 import sys, os, json
+from infrastructure.config import config_data
 
 def callback(ch, method, properties, body):
     try:
@@ -14,21 +15,19 @@ def callback(ch, method, properties, body):
 def start_consuming(queueName, app):
     with app.app_context():
         try:
-            rabbitmq_params = pika.ConnectionParameters(
-            host='localhost', 
-            port=5672,       
-            virtual_host='/',
-            credentials=pika.PlainCredentials(username='root', password='root')
-            )
             connection = None
-            #while connection is None or not connection.is_open:
-            #    try:
-            otherparam = pika.URLParameters("amqps://juvsiwic:BsycWVEIccDJ-7cW1_ysrA_1vXp57YQ4@prawn.rmq.cloudamqp.com/juvsiwic")
-            connection = pika.BlockingConnection(otherparam)
-            #        print("Connected to RabbitMQ!")
-            #    except pika.exceptions.AMQPConnectionError:
-            #        print("Failed to connect. Retrying in 15 second...")
-            #        time.sleep(15)
+            timeout = 0
+            while connection is None or not connection.is_open:
+                try:
+                    otherparam = pika.URLParameters(config_data["QUEUE_CONNECTION_STRING"])
+                    connection = pika.BlockingConnection(otherparam)
+                    print("Connected to RabbitMQ!")
+                except pika.exceptions.AMQPConnectionError:
+                    if timeout == config_data["QUEUE_CONNECTION_TIMEOUT"]:
+                        raise Exception("Time out connecting to the queue")
+                    print("Failed to connect. Retrying in 15 second...")
+                    time.sleep(15)
+                    timeout = timeout + 1
 
             channel = connection.channel()
             channel.queue_declare(queue=queueName)  

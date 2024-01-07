@@ -1,4 +1,5 @@
 from api import app
+from infrastructure.config import config_data
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0",port=8010,debug=True,threaded=True) 
+    app.run(host=config_data["APP_HOST"],port=config_data["APP_PORT"],debug=True,threaded=True) 
