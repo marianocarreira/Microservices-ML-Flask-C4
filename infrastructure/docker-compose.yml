@@ -11,21 +11,13 @@ services:
       - "5432:5432"
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql  
-
-  pgadmin:  
-    container_name: pgadmin4_container  
-    image: dpage/pgadmin4  
-    restart: always  
-    environment:  
-      PGADMIN_DEFAULT_EMAIL: admin@gmail.com  
-      PGADMIN_DEFAULT_PASSWORD: root  
-    ports:  
-      - "5050:80"
+    networks:
+      - mynetwork
 
   rabbitmqServer:
     container_name: rabbitmqServer
     image: "rabbitmq:3.6-management-alpine"
-    hostname: "rabbitmq-host"
+    hostname: "rabbitmqServer"
     ports:
       - "5672:5672"
       - "15672:15672"

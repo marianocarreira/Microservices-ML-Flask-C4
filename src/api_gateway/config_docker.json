@@ -7,6 +7,6 @@
     "CACHE_TYPE": "SimpleCache",
     "HEADER_API_KEY": "api-Key",
     "RATE_LIMITING_TIME_OUT_SECONDS": 60,
-    "QUEUE_CONNECTION_STRING": "amqps://root:root@rabbitmqServer/queue-log",
+    "QUEUE_CONNECTION_STRING": "amqp://root:root@rabbitmqServer:5672/",
     "QUEUE_LOG_NAME": "queue-log"
 }

@@ -7,6 +7,10 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-CMD [ "python", "app.py"]
+COPY . .
+COPY entrypoint.sh entrypoint.sh
+
+RUN chmod u+x entrypoint.sh
+ENTRYPOINT ["./entrypoint.sh"]
 
 EXPOSE 8000

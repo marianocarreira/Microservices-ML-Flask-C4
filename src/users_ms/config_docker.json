@@ -1,6 +1,6 @@
 {
     "DEBUG": true,
-    "SQLALCHEMY_DATABASE_URI": "postgresql://root:root@db:5432/logging-db",
+    "SQLALCHEMY_DATABASE_URI": "postgresql://root:root@pg_container:5432/users-db",
     "SQLALCHEMY_TRACK_MODIFICATIONS": false,
     "API_BASE_URL": "/internal/api",
     "API_KEY_HEADER": "api-Key",

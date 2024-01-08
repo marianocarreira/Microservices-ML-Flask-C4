@@ -9,6 +9,9 @@ import json
 from flask import request, jsonify
 import requests
 import configuration as config 
+import waiter as waiter
+
+waiter.wait_for_port("rabbitmqServer","5672")
 
 class RateLimitedExceded(Exception):
     pass

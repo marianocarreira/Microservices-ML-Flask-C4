@@ -2,6 +2,10 @@ from api import createApp
 from infrastructure.logger_consumer import start_consuming
 import threading
 from infrastructure.config import config_data
+from infrastructure.waiter import wait_for_port
+
+wait_for_port("pg_container","5432")
+wait_for_port("rabbitmqServer","5672")
 
 app = createApp()
 

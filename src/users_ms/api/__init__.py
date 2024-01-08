@@ -17,7 +17,7 @@ def createApp():
     db.init_app(app)
     migrate = Migrate() 
     migrate.init_app(app, db)
-
+    
     # Register blueprints
     from api import users_internal_api_blueprint
     # import declared routes

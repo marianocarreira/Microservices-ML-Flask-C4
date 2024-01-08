@@ -1,10 +1,10 @@
 {
     "LOG_QUEQUE_NAME": "queue-log",
-    "SQLALCHEMY_DATABASE_URI": "postgresql://root:root@db:5432/logging-db",
+    "SQLALCHEMY_DATABASE_URI": "postgresql://root:root@pg_container:5432/logging-db",
     "SQLALCHEMY_TRACK_MODIFICATIONS": false,
     "API_BASE_URL": "/internal/api",
     "API_KEY_HEADER": "api-Key",
-    "QUEUE_CONNECTION_STRING": "amqps://root:root@rabbitmqServer/queue-log",
+    "QUEUE_CONNECTION_STRING": "amqp://root:root@rabbitmqServer:5672/",
     "QUEUE_CONNECTION_TIMEOUT": 5,
     "APP_PORT": 8000,
     "APP_HOST": "0.0.0.0"

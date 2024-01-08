@@ -5,8 +5,11 @@ WORKDIR /users_ms
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
+COPY entrypoint.sh entrypoint.sh
+
 COPY . .
 
-CMD ["python", "app.py"]
+RUN chmod u+x entrypoint.sh
+ENTRYPOINT ["./entrypoint.sh"]
 
 EXPOSE 8020
