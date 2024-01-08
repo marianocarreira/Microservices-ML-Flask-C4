@@ -5,7 +5,7 @@ from infrastructure.config import config_data
 from infrastructure.waiter import wait_for_port
 from infrastructure.seeder import seedUsers
 
-wait_for_port("pg_container","5432")
+wait_for_port(config_data["DB_HOST"],"5432")
 
 app = createApp()
 
