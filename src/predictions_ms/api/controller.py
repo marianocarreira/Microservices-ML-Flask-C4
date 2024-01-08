@@ -11,4 +11,10 @@ def riesgo_cardiaco_get():
     if error:
         return jsonify(error),400
     
-    return jsonify({"riesgoCardiaco":svc.calcularRiesgoLight(params)}) 
+    riesgo = svc.calcularRiesgoLight(params)
+    riesgo = round(riesgo)
+    riesgo_response='No existe riesgo cardíaco'
+    if riesgo > 0:
+        riesgo_response = 'Si, existe riesgo cardíaco'
+
+    return jsonify({"riesgo_cardiaco":riesgo_response}) 
