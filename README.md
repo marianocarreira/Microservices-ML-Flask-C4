@@ -1,8 +1,18 @@
 # Microservice architecture and Machine Learning example using Python Flask and TensorFlow
 
-## Author
+## Stakeholders
 
-Mariano Carreira
+Author:
+* Mariano Carreira
+
+Tutors:
+* Dr. Andres Díaz Pace
+* Gabriela Perez
+* Dr. Matias Urbieta 
+
+Institution:
+* Universidad Nacional de La Plata
+
 
 ## Summary
 
