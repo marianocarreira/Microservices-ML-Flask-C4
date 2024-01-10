@@ -34,4 +34,4 @@ Intended audience: Tech and non-tech people inside and outside of the team.
 - [ADR04-AppGateway-pattern](../ADRs/ADR04-AppGateway-pattern.md)
 
 ## Related Views
-- [V02-C4_Container-view](../views/V02-C4_Container-view.md)
+- [V02-C4_Containers-all-view](./V02-C4_Containers-all-view.md)
