@@ -55,7 +55,7 @@ The ADR template was taken from: (link)
 
 ### Architecture Views
 
-The selected diagram model is C4, created by Simon Brown (link to Simon's profile). <br>
+The selected diagram model is C4 Model (https://c4model.com/), created by Simon Brown (link to Simon's profile). <br>
 For more details, please refer to the documentation available [here](add the C4 website link). <br>
 
 Note: Componetns and Code diagram's level were meged into a single document.

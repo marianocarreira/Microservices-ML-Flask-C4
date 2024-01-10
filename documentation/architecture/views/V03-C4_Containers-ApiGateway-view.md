@@ -30,7 +30,7 @@ Intended audience: Developers, software-architects inside and outside of the tea
 - [ADR00-RestFull-API](/documentation/architecture/ADRs/ADR00-RestFull-API.md)
 - [ADR01-Microservicios-Style](/documentation/architecture/ADRs/ADR01-Microservicios-Style.md)
 - [ADR03-Contenerizacion-Docker](/documentation/architecture/ADRs/ADR03-Contenerizacion-Docker.md)
-- [ADR04-AppGateway-pattern](/documentation/architecture/ADRs/ADR04-AppGateway-pattern.md.md)
+- [ADR04-AppGateway-pattern](/documentation/architecture/ADRs/ADR04-AppGateway-pattern.md)
 - [ADR02-RabbitMq](/documentation/architecture/ADRs/ADR02-RabbitMq.md)
 
 ## Related Views
