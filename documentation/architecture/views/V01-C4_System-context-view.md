@@ -7,6 +7,8 @@ Short description of the scope and nature of this architecture view.
 (There's no need to list *all* elements in the diagram, just the ones that require further information. Give the 
  information in a bulleted list for improved readability.)
 
+![Getting Started](../diagrams/dark/structurizr-1-softwareSystem.png)
+
 #### Element X
 - info
 - info
