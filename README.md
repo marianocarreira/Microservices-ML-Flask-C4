@@ -1,4 +1,4 @@
-# Microservice architecture and Machine Learning example
+# Microservice architecture and Machine Learning example using Python Flask and TensorFlow
 
 ## Author
 
