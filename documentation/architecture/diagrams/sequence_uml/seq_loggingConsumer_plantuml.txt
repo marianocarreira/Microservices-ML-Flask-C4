@@ -1,0 +1,16 @@
+@startuml
+participant QueueLog
+participant QueueConsumer
+database "logging-db" as LoggingDB
+
+QueueLog -> QueueConsumer: Log Entry
+activate QueueConsumer
+
+QueueConsumer -> LoggingDB: Save Log Entry
+activate LoggingDB
+
+LoggingDB --> QueueConsumer: Log Entry Saved
+deactivate LoggingDB
+
+QueueConsumer --> QueueLog: Acknowledge
+deactivate QueueConsumer

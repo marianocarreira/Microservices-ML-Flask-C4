@@ -35,7 +35,16 @@ Provides more details about the responsibilities and the technology/implementati
 - Manages Queue connection to the queue (RabbitMQ).
 - Subscribes to the logging-queue.
 - Receives LogEntries published to that queue.
- 
+
+## Behavior (C4 Code Level)
+  - Commond Db acces to query logs
+
+ <img src="../diagrams/sequence_uml/seq_commonflow_all_plantuml.png" alt="drawing" width="700"/>
+
+   - Flow when a new log Entry is published
+
+ <img src="../diagrams/sequence_uml/seq_loggingConsumer_plantuml.png" alt="drawing" width="500"/>
+
 ## Related ADRs 
 - [ADR00-RestFull-API](/documentation/architecture/ADRs/ADR00-RestFull-API.md)
 - [ADR01-Microservicios-Style](/documentation/architecture/ADRs/ADR01-Microservicios-Style.md)

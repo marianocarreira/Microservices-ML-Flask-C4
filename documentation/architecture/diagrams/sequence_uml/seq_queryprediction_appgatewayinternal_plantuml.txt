@@ -1,0 +1,69 @@
+@startuml
+actor ExternalUser
+
+participant AuthMiddleware
+participant UsersMS
+participant RateLimitingMiddleware
+participant SimpleCache
+participant LoggingMiddlewareBefore
+participant Router
+participant PredictionsMS
+participant LoggingMiddlewareAfter
+participant LogsProducer
+database Queue as LoggingQueue
+
+ExternalUser -> AuthMiddleware: User Request
+activate AuthMiddleware
+
+AuthMiddleware -> UsersMS: Authenticate User
+activate UsersMS
+
+UsersMS --> AuthMiddleware: Not Authorized (Error)
+deactivate UsersMS
+
+AuthMiddleware -> RateLimitingMiddleware: Check Subscription
+activate RateLimitingMiddleware
+
+RateLimitingMiddleware -> SimpleCache: Get Current Requests
+activate SimpleCache
+
+SimpleCache --> RateLimitingMiddleware: Current Requests Count
+deactivate SimpleCache
+
+RateLimitingMiddleware -> LoggingMiddlewareBefore: Log Request
+activate LoggingMiddlewareBefore
+
+LoggingMiddlewareBefore -> Router: Route Request
+activate Router
+
+Router -> PredictionsMS: Get Health Risk Prediction
+activate PredictionsMS
+
+PredictionsMS --> Router: Health Risk Prediction
+deactivate PredictionsMS
+
+Router -> LoggingMiddlewareAfter: Log After Request
+activate LoggingMiddlewareAfter
+
+LoggingMiddlewareAfter -> LogsProducer: Create Log Entry
+activate LogsProducer
+
+LogsProducer -> LoggingQueue: Publish Log Entry
+deactivate LogsProducer
+
+LoggingMiddlewareAfter --> Router: Log Published
+deactivate LoggingMiddlewareAfter
+
+Router --> LoggingMiddlewareBefore: Request Routed
+deactivate Router
+
+LoggingMiddlewareBefore --> RateLimitingMiddleware: Request Logged
+deactivate LoggingMiddlewareBefore
+
+RateLimitingMiddleware --> AuthMiddleware: Subscription Checked
+deactivate RateLimitingMiddleware
+
+AuthMiddleware --> ExternalUser: Response (Health Risk Prediction)
+deactivate AuthMiddleware
+
+@enduml

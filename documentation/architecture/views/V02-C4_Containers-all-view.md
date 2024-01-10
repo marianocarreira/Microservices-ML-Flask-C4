@@ -30,6 +30,7 @@ Intended audience: Developers, software-architects inside and outside of the tea
 - Database (postgress) serving the LoggingMS for logging persisting and quering.
 
 ## Behavior
+
 - N/A
  
 ## Related ADRs 

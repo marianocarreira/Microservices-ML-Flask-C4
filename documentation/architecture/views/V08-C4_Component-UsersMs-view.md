@@ -37,7 +37,13 @@ Provides more details about the responsibilities and the technology/implementati
 
 #### Db Seeder
 - Creates (if they are not) tables needed for the ORM.
- 
+
+## Behavior (C4 Code Level)
+ - Commond Db acces to CRUD users operations
+
+ <img src="../diagrams/sequence_uml/seq_commonflow_all_plantuml.png" alt="drawing" width="700"/>
+
+
 ## Related ADRs 
 - [ADR00-RestFull-API](/documentation/architecture/ADRs/ADR00-RestFull-API.md)
 - [ADR01-Microservicios-Style](/documentation/architecture/ADRs/ADR01-Microservicios-Style.md)

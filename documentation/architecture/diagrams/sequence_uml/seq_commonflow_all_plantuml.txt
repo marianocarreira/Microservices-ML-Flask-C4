@@ -1,0 +1,32 @@
+@startuml
+participant Caller
+participant Controller
+participant Service
+participant Model
+database Database
+
+Caller -> Controller: Request
+activate Controller
+
+Controller -> Service: Invoke Service
+activate Service
+
+Service -> Model: Perform Action
+activate Model
+
+Model -> Database: Retrieve/Update Data
+activate Database
+
+Database --> Model: Data Response
+deactivate Database
+
+Model --> Service: Result
+deactivate Model
+
+Service --> Controller: Processed Result
+deactivate Service
+
+Controller --> Caller: Response
+deactivate Controller
+
+@enduml

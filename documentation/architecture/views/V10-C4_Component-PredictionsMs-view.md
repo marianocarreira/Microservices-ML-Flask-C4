@@ -31,6 +31,11 @@ Provides more details about the responsibilities and the technology/implementati
 - Handles configuration.
 - Configuration source depends on the environment its running.
 
+## Behavior (C4 Code Level)
+   - Query predictions flow
+
+ <img src="../diagrams/sequence_uml/seq_predictionquery_predictionsms_plantuml.png" alt="drawing" width="500"/>
+
 ## Related ADRs 
 - [ADR00-RestFull-API](/documentation/architecture/ADRs/ADR00-RestFull-API.md)
 - [ADR01-Microservicios-Style](/documentation/architecture/ADRs/ADR01-Microservicios-Style.md)

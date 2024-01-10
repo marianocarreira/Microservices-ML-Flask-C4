@@ -22,7 +22,9 @@ Intended audience: Developers, software-architects inside and outside of the tea
 - It persist the number of request per minute, and therefore help rate-limiter to do its job.
 
 ## Behavior
-- N/A
+- Eternal User - Query Prediction Flow
+
+<img src="../diagrams/sequence_uml/seq_queryprediction_mainflow.png" alt="drawing" width="700"/>
  
 ## Related ADRs 
 - [ADR00-RestFull-API](/documentation/architecture/ADRs/ADR00-RestFull-API.md)

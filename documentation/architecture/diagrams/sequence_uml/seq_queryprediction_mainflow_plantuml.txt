@@ -1,0 +1,38 @@
+@startuml
+actor ExternalUser
+
+participant ApiGateway
+participant RateLimitingCache
+participant UsersMs
+participant PredictionsMs
+
+ExternalUser -> ApiGateway: Call API
+activate ApiGateway
+
+ApiGateway -> UsersMs: Authenticate User
+activate UsersMs
+
+UsersMs --> ApiGateway: Auth Error
+deactivate UsersMs
+
+ApiGateway -> RateLimitingCache: Check Rate Limiting
+activate RateLimitingCache
+
+RateLimitingCache --> ApiGateway: Requests Exceeded
+deactivate RateLimitingCache
+
+
+ApiGateway -> PredictionsMs: Get Health Risk Prediction
+activate PredictionsMs
+
+PredictionsMs --> ApiGateway: Health Risk Prediction
+deactivate PredictionsMs
+
+ApiGateway -> Queue: Publish LogEntry
+activate Queue
+
+ApiGateway --> Queue: LogEntry
+deactivate Queue
+
+deactivate ApiGateway
+@enduml

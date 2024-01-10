@@ -45,9 +45,11 @@ Provides more details about the responsibilities and the technology/implementati
 - Connects and manage logging queue connections. (RabbitMQ)
 - Publish the Log Entries generated.
 
-## Behavior
+## Behavior (C4 Code Level)
 
-- N/A
+- Eternal User - Query Prediction Flow
+
+<img src="../diagrams/sequence_uml/seq_queryprediction_appgatewayinternal_plantuml.png" alt="drawing" width="950"/>
  
 ## Related ADRs
 - [ADR00-RestFull-API](/documentation/architecture/ADRs/ADR00-RestFull-API.md)

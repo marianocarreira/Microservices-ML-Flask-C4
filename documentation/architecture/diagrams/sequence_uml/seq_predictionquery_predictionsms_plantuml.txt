@@ -1,0 +1,29 @@
+@startuml
+actor Caller
+participant Controller
+participant SimpleCache
+participant Riesgo_cardiaco_model_v1
+
+Caller -> Controller: Request Prediction
+activate Controller
+
+Controller -> SimpleCache: Check Prediction
+activate SimpleCache
+
+SimpleCache --> Controller: Cached Prediction (if available)
+deactivate SimpleCache
+
+alt Cached Prediction
+    Controller --> Caller: Return Cached Prediction
+else Not Cached Prediction
+    Controller -> Riesgo_cardiaco_model_v1: Make Prediction
+    activate Riesgo_cardiaco_model_v1
+
+    Riesgo_cardiaco_model_v1 --> Controller: Prediction
+    deactivate Riesgo_cardiaco_model_v1
+
+    Controller --> Caller: Return Prediction
+end
+
+deactivate Controller
+@enduml
