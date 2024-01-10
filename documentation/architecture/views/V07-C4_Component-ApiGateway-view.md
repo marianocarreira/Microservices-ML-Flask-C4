@@ -17,13 +17,12 @@ Provides more details about the responsibilities and the technology/implementati
 - Human being with a valid subscription.
 
 #### Auth Midleware
-
 - Entry point for external users.
 - Authenticates users before any other action.
 - It calls Users-MS as authentication provider.
+- CircuitBreaker pattern for auth calls.
 
 #### Rate Limiting Middleware
-
 - Control the request number by user's suscriptions.
 - Uses information about subscriptions returned by Auth Middleware.
 - Stores number of perfomed requests by users in cache.

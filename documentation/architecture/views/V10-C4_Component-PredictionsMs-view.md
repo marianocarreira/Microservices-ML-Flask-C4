@@ -19,6 +19,9 @@ Provides more details about the responsibilities and the technology/implementati
 - Handles requests.
 - Validates requests parameters.
 
+#### Simple Cache
+- Caches predictions.
+
 #### Service
 - Contains business logic.
 - Business logic entry point.
