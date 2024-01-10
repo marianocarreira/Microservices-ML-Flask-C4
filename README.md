@@ -22,6 +22,7 @@ This solution was developed within the framework of the "Software Engineering To
 
 ### Machine Learning
 
+On the machine learning side, it was requested to create a ml model to predict Hearth Risks by provided set of parameters, also, it was provided the dataset for this model that can be found here (link)
 
 ### Functional
 
@@ -90,4 +91,24 @@ Note: Componetns and Code diagram's level were meged into a single document.
 - [V09-C4_Component-LoggingMs-view](/documentation/architecture/views/V09-C4_Component-LoggingMs-view.md)
 - [V10-C4_Component-PredictionsMs-view](/documentation/architecture/views/V10-C4_Component-PredictionsMs-view.md)
 
-### instructions to run the solution
+### Instructions to run the solution
+
+#### Pre-requisites
+1) Install Postman Client: <br>
+(link)
+2) Install Docker Desktop: <br>
+(link)
+3) Clone this repo: <br>
+git clone
+
+#### Test #01 - Internal User - Add User Account
+#### Test #02 - Internal User - List all Users
+#### Test #03 - Internal User - Make a prediction
+#### Test #04 - External User - Invalid Api-Key
+#### Test #05 - External User - Invalid Request
+#### Test #06 - External User - Succeded Prediction
+#### Test #07 - External User - Rate Limited Exceded (PREMIUM)
+#### Test #08 - External User - Rate Limited Exceded (FREMIUM)
+#### Test #09 - Internal User - Query Logs generated
+#### Test #10 - Internal User - Test Predictor Cache response time
+#### Test #11 - Internal User - Test User Auth Circuit Breaker
