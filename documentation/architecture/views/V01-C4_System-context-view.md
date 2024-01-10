@@ -6,11 +6,11 @@ Provides the overall system context. It represents the system as a box surrounde
 
 Intended audience: Tech and non-tech people inside and outside of the team.
 
-<img src="../diagrams/dark/structurizr-1-softwareSystem.png" alt="drawing" width="900"/>
+<img src="../diagrams/dark/structurizr-1-softwareSystem.png" alt="drawing" width="500"/>
 
 ## Element Catalog 
 
-<img src="../diagrams/dark/structurizr-1-softwareSystem-key.png" alt="drawing" width="900"/>
+<img src="../diagrams/dark/structurizr-1-softwareSystem-key.png" alt="drawing" width="600"/>
 
 #### Element "Sistema de Riesto Cardíaco"
 - System for Hearh Risk predictions exposed by an API RestFull
