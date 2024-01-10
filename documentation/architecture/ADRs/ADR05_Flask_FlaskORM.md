@@ -1,4 +1,4 @@
-# ADR 05: Adoption of Flask-SQLAlchemy for Object-Relational Mapping
+# ADR 05: Tech Stack, Adoption of Flask-SQLAlchemy for Object-Relational Mapping
 
 ## Description
 
