@@ -1,7 +1,7 @@
 # Title of the architecture view 
 Short description of the scope and nature of this architecture view. 
 
-![Alt text - name of the view](../images/diagram-filename.png)
+![Alt text - name of the view]
 
 ## Element Catalog 
 (There's no need to list *all* elements in the diagram, just the ones that require further information. Give the 
