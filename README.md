@@ -120,6 +120,17 @@ Note: Components and Code diagram's level were meged into a single document.
 ```bash
 git clone https://github.com/marianocarreira/Topicos2_2023.git
 ```
+4) Execute docker compose:
+```bash
+cd ./infrastructure/
+docker compose up --build
+```
+5) After all the Docker Containers were initilized:
+
+- Open Postman client.
+
+- Open Request collection for testing:
+
 #### Test #01 - Internal User - Add User Account
 #### Test #02 - Internal User - List all Users
 #### Test #03 - Internal User - Make a prediction
