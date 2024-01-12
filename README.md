@@ -19,26 +19,30 @@ Institution:
 
 ## <img height="32" width="32" src="./documentation/architecture/diagrams/icons/summary.png"> &nbsp; Summary
 
-This solution was developed within the framework of the "Software Engineering Topics 2" course in the Master's in Software Engineering program at the University of La Plata during the second semester of 2023. Successful completion of this project is a prerequisite for passing the course.
+This solution was developed within the framework of the "Software Engineering Topics 2" course in the Master's in Software Engineering program at the University of La Plata during the second semester of 2023. <br>
+Successful completion of this project is a prerequisite for passing the course.
 
 ## <img height="32" width="32" src="./documentation/architecture/diagrams/icons/requirements.png"> &nbsp; Requirements
 
 ### Machine Learning
 
-On the machine learning side, it was requested to create a ml model to predict Hearth Risks by provided set of parameters, also, it was provided the dataset for this model that can be found here (link)
+On the machine learning side, it was requested to create a ml model to predict Hearth Risks by provided set of parameters, also, it was provided the dataset for this model that can be found [here](src/model_ml/dataset/datos_de_pacientes_5000.csv)
 
 ### Functional
 
-The functional requirements were outlined by the professors and are detailed [here] [link]. In essence, the project entails creating a machine learning model capable of predicting cardiac risk based on specific parameters. Architecturally, the system is required to be built using a microservices architecture, leveraging the knowledge acquired in the course.
+The functional requirements were outlined by the professors and are detailed in the section Funtional Requirements down below. <br>
+In essence, the project entails creating a machine learning model capable of predicting cardiac risk based on specific parameters. <br>
+Architecturally, the system is required to be built using a microservices architecture, leveraging the knowledge acquired in the course.
 
 ### Non-functional
 
-Although no functional requirements were explicitly provided, an architecture is sought that exhibits responsive performance and demonstrates close scalability. Most design and architecture decisions stem from topics covered in class.
+Although no functional requirements were explicitly provided, an architecture is sought that exhibits responsive performance and demonstrates close scalability. 
+Most design and architecture decisions stem from topics covered in class.
 
 ### Technologies
 
-For the machine learning model, the proposed technologies include Python, Numpy, Keras, and TensorFlow. <br>
-Python and Flask are recommended for implementing the additional requested services. <br>
+For the machine learning model, the proposed technologies included Python, Numpy, Keras, and TensorFlow. <br>
+Python and Flask were recommended for implementing the additional requested services. <br>
 Docker was proposed for deployment.
 
 ### Documentation
@@ -61,7 +65,7 @@ This work includes the creation of Architectural Decision Records (ADRs), Sequen
 
 ## <img height="32" width="32" src="./documentation/architecture/diagrams/icons/architecture.png"> &nbsp; Architecture
 
-The architecture was overdimensioned to some extent to comprehensively address the topics covered in class.
+Important: The architecture was **overdimensioned** to some extent to comprehensively address the topics covered in class.
 
 ### ADRs
 
@@ -76,7 +80,7 @@ The ADR template comes from [here, Copyright (c) 2023 Paulo Merson](https://gith
 
 ### Architecture Views
 
-The selected diagram model is C4 Model, created by Simon Brown [Linked-In Profile](https://www.linkedin.com/in/simonbrownjersey). <br>
+The selected diagram model is **C4 Model**, created by Simon Brown [Linked-In Profile](https://www.linkedin.com/in/simonbrownjersey). <br>
 For more details, please refer to the documentation available [C4Model.com](https://c4model.com/). <br>
 
 All the diagrams were done using Structuralizer and PlantUml
@@ -86,7 +90,7 @@ All the diagrams were done using Structuralizer and PlantUml
   - [Structurizr Documentation](https://docs.structurizr.com/)
   - [Plantuml](https://plantuml.com/)
 
-Note: Components and Code diagram's level were meged into a single document.
+Note: Components and Code diagram's level, from the C4 Model, were meged into a single document.
 
 #### System's Level
 
