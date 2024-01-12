@@ -2,34 +2,40 @@
 Describe here the forces that influence the design decision, including technological, cost-related, and project local. 
 
 ## Context
-Our system requires a robust and scalable communication mechanism to facilitate interaction between various components. The decision-making team is evaluating different options for implementing this communication, including RESTful APIs, GraphQL, SOAP and other alternatives.
+Our system requires a robust and scalable communication mechanism to facilitate interaction between various components. I'm evaluating different options for implementing this communication, including RESTful APIs, GraphQL, SOAP and other alternatives.
 
 ## Decision 
-After careful consideration and analysis, we have decided to adopt a RESTful API system for our communication needs.
+After careful consideration and analysis, I have decided to adopt a RESTful API system for our communication needs.
 
 ## Rationale 
-1) Simplicity and Ease of Adoption:
+1) **Simplicity and Ease of Adoption:**
+
 RESTful APIs follow a simple and standardized architectural style, making it easy for developers to understand and adopt.
 There is a wealth of resources, documentation, and community support available for RESTful APIs, reducing the learning curve for development teams.
-Scalability:
 
-2) RESTful APIs are inherently scalable, allowing us to scale our system horizontally by adding more servers.
+2) **Scalability:**
+
+RESTful APIs are inherently scalable, allowing us to scale our system horizontally by adding more servers.
 Stateless nature of REST simplifies load balancing, making it easier to distribute incoming requests across multiple servers.
-Interoperability:
 
-3) RESTful APIs promote loose coupling between client and server, allowing different components to evolve independently.
+3) **Interoperability:**
+
+RESTful APIs promote loose coupling between client and server, allowing different components to evolve independently.
 The use of standard HTTP methods and status codes enhances interoperability, enabling communication with a wide range of clients and services.
-Caching and Performance:
 
-4) RESTful APIs can leverage HTTP caching mechanisms, improving performance by reducing the need for repeated data requests.
+4) **Caching and Performance:**
+
+RESTful APIs can leverage HTTP caching mechanisms, improving performance by reducing the need for repeated data requests.
 Stateless communication reduces server overhead, leading to better overall system performance.
-Standardization:
 
-5) RESTful APIs follow a set of well-defined standards and conventions, enhancing consistency and predictability across different parts of the system.
+5) **Standardization:**
+
+RESTful APIs follow a set of well-defined standards and conventions, enhancing consistency and predictability across different parts of the system.
 The use of standard HTTP methods and status codes simplifies error handling and response interpretation.
-Security:
 
-6) RESTful APIs can be secured using standard mechanisms such as HTTPS, API keys, and OAuth, ensuring data integrity and confidentiality.
+6) **Security:**
+
+RESTful APIs can be secured using standard mechanisms such as HTTPS, API keys, and OAuth, ensuring data integrity and confidentiality.
 Existing security practices for HTTP-based communication can be readily applied to RESTful APIs.
 
 ## Status

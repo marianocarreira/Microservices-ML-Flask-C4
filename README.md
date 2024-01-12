@@ -1,24 +1,27 @@
-# Microservice architecture and Machine Learning example using Python Flask and TensorFlow
+# Microservice architecture and Machine Learning example using Python, Flask, Docker and TensorFlow Keras
 
-## Stakeholders
+## <img height="32" width="32" src="./documentation/architecture/diagrams/icons/stakeholders.png"> &nbsp; Stakeholders
 
 Author:
-* Mariano Carreira
+
+* Lic. Mariano Carreira
 
 Tutors:
-* Dr. Andres Díaz Pace
-* Gabriela Perez
-* Dr. Matias Urbieta 
+
+* Dra. Claudia Pons 
+* Lic. Gabriela Perez
+* Dr. Andres Diaz Pace
+* Dr. Matias Urbieta
 
 Institution:
+
 * Universidad Nacional de La Plata
 
-
-## Summary
+## <img height="32" width="32" src="./documentation/architecture/diagrams/icons/summary.png"> &nbsp; Summary
 
 This solution was developed within the framework of the "Software Engineering Topics 2" course in the Master's in Software Engineering program at the University of La Plata during the second semester of 2024. Successful completion of this project is a prerequisite for passing the course.
 
-## Requirements
+## <img height="32" width="32" src="./documentation/architecture/diagrams/icons/requirements.png"> &nbsp; Requirements
 
 ### Machine Learning
 
@@ -43,19 +46,26 @@ Docker was proposed for deployment.
 Comprehensive documentation, encompassing architecture and design decisions, is also a key requirement.<br>
 This work includes the creation of Architectural Decision Records (ADRs), Sequence Diagrams, and Diagrams using Domain-Driven Design (DDD) principles.
 
-## Solution Implemented
+## <img height="32" width="32" src="./documentation/architecture/diagrams/icons/solution.png"> &nbsp; Solution Implemented
 
 ### Functional requeriments
 
+- [TpIntegrador](/documentation/requirements/TP%20Integrador.pdf)
+
 ### Non-Functional requeriments
 
-## Architecture
+* Scalability.
+* Fault Tolerance.
+* Interoperability.
+* Maintainability.
+
+## <img height="32" width="32" src="./documentation/architecture/diagrams/icons/architecture.png"> &nbsp; Architecture
 
 The architecture was overdimensioned to some extent to comprehensively address the topics covered in class.
 
 ### ADRs
 
-The ADR template was taken from: (link)
+The ADR template comes from [here, Copyright (c) 2023 Paulo Merson](https://github.com/pmerson/ADR-template/blob/master/ADR-template.md)
 
 - [ADR00-RestFull-API](/documentation/architecture/ADRs/ADR00-RestFull-API.md)
 - [ADR01-Microservicios-Style](/documentation/architecture/ADRs/ADR01-Microservicios-Style.md)
@@ -66,10 +76,17 @@ The ADR template was taken from: (link)
 
 ### Architecture Views
 
-The selected diagram model is C4 Model (https://c4model.com/), created by Simon Brown (link to Simon's profile). <br>
-For more details, please refer to the documentation available [here](add the C4 website link). <br>
+The selected diagram model is C4 Model, created by Simon Brown [Linked-In Profile](https://www.linkedin.com/in/simonbrownjersey). <br>
+For more details, please refer to the documentation available [C4Model.com](https://c4model.com/). <br>
 
-Note: Componetns and Code diagram's level were meged into a single document.
+All the diagrams were done using Structuralizer and PlantUml
+
+* Resources
+  - [Structurizr](https://structurizr.com/)
+  - [Structurizr Documentation](https://docs.structurizr.com/)
+  - [Plantuml](https://plantuml.com/)
+
+Note: Components and Code diagram's level were meged into a single document.
 
 #### System's Level
 
@@ -91,16 +108,18 @@ Note: Componetns and Code diagram's level were meged into a single document.
 - [V09-C4_Component-LoggingMs-view](/documentation/architecture/views/V09-C4_Component-LoggingMs-view.md)
 - [V10-C4_Component-PredictionsMs-view](/documentation/architecture/views/V10-C4_Component-PredictionsMs-view.md)
 
-### Instructions to run the solution
+##  <img height="32" width="32" src="./documentation/architecture/diagrams/icons/isntructions.png"> &nbsp; Instructions to run the solution
 
 #### Pre-requisites
 1) Install Postman Client: <br>
-(link)
+[Instructions (Windows and Linux)](https://learning.postman.com/docs/getting-started/installation/installation-and-updates/)
 2) Install Docker Desktop: <br>
-(link)
+[Linux](https://docs.docker.com/desktop/install/linux-install/)
+[Windows](https://docs.docker.com/desktop/install/windows-install/)
 3) Clone this repo: <br>
-git clone
-
+```bash
+git clone https://github.com/marianocarreira/Topicos2_2023.git
+```
 #### Test #01 - Internal User - Add User Account
 #### Test #02 - Internal User - List all Users
 #### Test #03 - Internal User - Make a prediction
