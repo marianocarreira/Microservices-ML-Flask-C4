@@ -110,35 +110,28 @@ Note: Components and Code diagram's level were meged into a single document.
 
 ##  <img height="32" width="32" src="./documentation/architecture/diagrams/icons/isntructions.png"> &nbsp; Instructions to run the solution
 
-#### Pre-requisites
-1) Install Postman Client: <br>
-[Instructions (Windows and Linux)](https://learning.postman.com/docs/getting-started/installation/installation-and-updates/)
-2) Install Docker Desktop: <br>
-[Linux](https://docs.docker.com/desktop/install/linux-install/)
-[Windows](https://docs.docker.com/desktop/install/windows-install/)
-3) Clone this repo: <br>
-```bash
-git clone https://github.com/marianocarreira/Topicos2_2023.git
-```
-4) Execute docker compose:
-```bash
-cd ./infrastructure/
-docker compose up --build
-```
-5) After all the Docker Containers were initilized:
+[Prerequisites](/documentation/tests/Tests_Prerequisites.md)
 
-- Open Postman client.
+##  <img height="32" width="32" src="./documentation/architecture/diagrams/icons/test.png"> &nbsp; Testing
 
-- Open Request collection for testing:
+[Test #01 - Internal User - Add User Account](/documentation/tests/Test_01.md)
 
-#### Test #01 - Internal User - Add User Account
-#### Test #02 - Internal User - List all Users
-#### Test #03 - Internal User - Make a prediction
-#### Test #04 - External User - Invalid Api-Key
-#### Test #05 - External User - Invalid Request
-#### Test #06 - External User - Succeded Prediction
-#### Test #07 - External User - Rate Limited Exceded (PREMIUM)
-#### Test #08 - External User - Rate Limited Exceded (FREMIUM)
-#### Test #09 - Internal User - Query Logs generated
-#### Test #10 - Internal User - Test Predictor Cache response time
-#### Test #11 - Internal User - Test User Auth Circuit Breaker
+[Test #02 - Internal User - List all Users](/documentation/tests/Test_02.md)
+
+[Test #03 - Internal User - Make a prediction](/documentation/tests/Test_03.md)
+
+[Test #04 - External User - Invalid Api-Key](/documentation/tests/Test_04.md)
+
+[Test #05 - External User - Invalid Request](/documentation/tests/Test_05.md)
+
+[Test #06 - External User - Succeded Prediction](/documentation/tests/Test_06.md)
+
+[Test #07 - External User - Rate Limited Exceded (PREMIUM)](/documentation/tests/Test_07.md)
+
+[Test #08 - External User - Rate Limited Exceded (FREMIUM)](/documentation/tests/Test_08.md)
+
+[Test #09 - Internal User - Query Logs generated](/documentation/tests/Test_09.md)
+
+[Test #10 - Internal User - Test Predictor Cache response time](/documentation/tests/Test_10.md)
+
+[Test #11 - Internal User - Delete User](/documentation/tests/Test_11.md)

@@ -1,0 +1,514 @@
+{
+	"info": {
+		"_postman_id": "4b369848-1834-4daf-b0ce-0701ddb0565c",
+		"name": "TpTopicos2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32262168"
+	},
+	"item": [
+		{
+			"name": "Test #01 - Internal User - Add User Account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "apiKey",
+							"value": "0001",
+							"type": "text"
+						},
+						{
+							"key": "subscriptionName",
+							"value": "FREEMIUM",
+							"type": "text"
+						},
+						{
+							"key": "subscriptionRpm",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8020/internal/api/user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8020",
+					"path": [
+						"internal",
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test #02 - Internal User - List all Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8020/internal/api/user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8020",
+					"path": [
+						"internal",
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test #03 - Internal User - Make a prediction",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8010/internal/api/riesgoCardiaco?colesterol=1.5&presion=0.7&glucosa=1.3&edad=90&sobrepeso=1&tabaquismo=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8010",
+					"path": [
+						"internal",
+						"api",
+						"riesgoCardiaco"
+					],
+					"query": [
+						{
+							"key": "colesterol",
+							"value": "1.5"
+						},
+						{
+							"key": "presion",
+							"value": "0.7"
+						},
+						{
+							"key": "glucosa",
+							"value": "1.3"
+						},
+						{
+							"key": "edad",
+							"value": "90"
+						},
+						{
+							"key": "sobrepeso",
+							"value": "1"
+						},
+						{
+							"key": "tabaquismo",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test #04 - External User - Invalid Api-Key",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-Key",
+						"value": "999999",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8080/external/api/riesgocardiaco?colesterol=1.5&presion=0.7&glucosa=1.3&edad=90&sobrepeso=1&tabaquismo=0",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"external",
+						"api",
+						"riesgocardiaco"
+					],
+					"query": [
+						{
+							"key": "colesterol",
+							"value": "1.5"
+						},
+						{
+							"key": "presion",
+							"value": "0.7"
+						},
+						{
+							"key": "glucosa",
+							"value": "1.3"
+						},
+						{
+							"key": "edad",
+							"value": "90"
+						},
+						{
+							"key": "sobrepeso",
+							"value": "1"
+						},
+						{
+							"key": "tabaquismo",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test #05 - External User - Invalid Request",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-Key",
+						"value": "1234",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8080/external/api/riesgocardiaco?sinParametros",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"external",
+						"api",
+						"riesgocardiaco"
+					],
+					"query": [
+						{
+							"key": "sinParametros",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test #06 - External User - Succeded Prediction",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-Key",
+						"value": "1234",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8080/external/api/riesgocardiaco?colesterol=1.5&presion=0.7&glucosa=1.3&edad=90&sobrepeso=1&tabaquismo=0",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"external",
+						"api",
+						"riesgocardiaco"
+					],
+					"query": [
+						{
+							"key": "colesterol",
+							"value": "1.5"
+						},
+						{
+							"key": "presion",
+							"value": "0.7"
+						},
+						{
+							"key": "glucosa",
+							"value": "1.3"
+						},
+						{
+							"key": "edad",
+							"value": "90"
+						},
+						{
+							"key": "sobrepeso",
+							"value": "1"
+						},
+						{
+							"key": "tabaquismo",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test #07 - External User - Rate Limited Exceded (PREMIUM)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-Key",
+						"value": "4321",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8080/external/api/riesgocardiaco?colesterol=1.5&presion=0.7&glucosa=1.3&edad=90&sobrepeso=1&tabaquismo=0",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"external",
+						"api",
+						"riesgocardiaco"
+					],
+					"query": [
+						{
+							"key": "colesterol",
+							"value": "1.5"
+						},
+						{
+							"key": "presion",
+							"value": "0.7"
+						},
+						{
+							"key": "glucosa",
+							"value": "1.3"
+						},
+						{
+							"key": "edad",
+							"value": "90"
+						},
+						{
+							"key": "sobrepeso",
+							"value": "1"
+						},
+						{
+							"key": "tabaquismo",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test #08 - External User - Rate Limited Exceded (FREEMIUM)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-Key",
+						"value": "1234",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8080/external/api/riesgocardiaco?colesterol=1.5&presion=0.7&glucosa=1.3&edad=90&sobrepeso=1&tabaquismo=0",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"external",
+						"api",
+						"riesgocardiaco"
+					],
+					"query": [
+						{
+							"key": "colesterol",
+							"value": "1.5"
+						},
+						{
+							"key": "presion",
+							"value": "0.7"
+						},
+						{
+							"key": "glucosa",
+							"value": "1.3"
+						},
+						{
+							"key": "edad",
+							"value": "90"
+						},
+						{
+							"key": "sobrepeso",
+							"value": "1"
+						},
+						{
+							"key": "tabaquismo",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test #09 - Internal User - Query Logs generated",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/internal/api/log",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"internal",
+						"api",
+						"log"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test #10 - Internal User - Test Predictor Cache response time",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8010/internal/api/riesgoCardiaco?colesterol=1&presion=1.7&glucosa=1.3&edad=90&sobrepeso=1&tabaquismo=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8010",
+					"path": [
+						"internal",
+						"api",
+						"riesgoCardiaco"
+					],
+					"query": [
+						{
+							"key": "colesterol",
+							"value": "1"
+						},
+						{
+							"key": "presion",
+							"value": "1.7"
+						},
+						{
+							"key": "glucosa",
+							"value": "1.3"
+						},
+						{
+							"key": "edad",
+							"value": "90"
+						},
+						{
+							"key": "sobrepeso",
+							"value": "1"
+						},
+						{
+							"key": "tabaquismo",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test #11 - Internal User - Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8020/internal/api/user?id=3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8020",
+					"path": [
+						"internal",
+						"api",
+						"user"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

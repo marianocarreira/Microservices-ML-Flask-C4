@@ -29,7 +29,7 @@ services:
 
   logging_ms:
     container_name: t2_tp_logging_ms
-    image: t2_tp_logging_ms
+    image: marianocarreiracorvel/t2_tp_logging_ms:version1
     ports:
       - "8000:8000"
     networks:
@@ -40,7 +40,7 @@ services:
 
   users_ms:
     container_name: t2_tp_users_ms
-    image: t2_tp_users_ms
+    image: marianocarreiracorvel/t2_tp_users_ms:latest
     ports:
       - "8020:8020"
     networks:
@@ -51,7 +51,7 @@ services:
 
   t2_tp_predictions_ms:
     container_name: t2_tp_predictions_ms
-    image: t2_tp_predictions_ms
+    image: marianocarreiracorvel/t2_tp_predictions_ms:version1
     ports:
       - "8010:8010"
     networks:
@@ -60,7 +60,7 @@ services:
 
   t2_tp_gateway_ms:
     container_name: t2_tp_gategay_ms
-    image: t2_tp_gategay_ms
+    image: marianocarreiracorvel/t2_tp_gategay_ms:version1
     ports:
       - "8080:8080"
     networks:
