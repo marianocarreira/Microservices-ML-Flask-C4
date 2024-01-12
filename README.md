@@ -19,7 +19,7 @@ Institution:
 
 ## <img height="32" width="32" src="./documentation/architecture/diagrams/icons/summary.png"> &nbsp; Summary
 
-This solution was developed within the framework of the "Software Engineering Topics 2" course in the Master's in Software Engineering program at the University of La Plata during the second semester of 2024. Successful completion of this project is a prerequisite for passing the course.
+This solution was developed within the framework of the "Software Engineering Topics 2" course in the Master's in Software Engineering program at the University of La Plata during the second semester of 2023. Successful completion of this project is a prerequisite for passing the course.
 
 ## <img height="32" width="32" src="./documentation/architecture/diagrams/icons/requirements.png"> &nbsp; Requirements
 
